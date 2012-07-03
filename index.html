@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Rel-Payment by relpayment</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Rel-Payment</h1>
+        <p>Payment discovery through Web Linking</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/relpayment" class="button fork"><strong>View On GitHub</strong></a>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <p>Payment and donation mechanisms should be easily discoverable. The solution is links - <em>rel-payment</em> links. Adding them to web pages or feed items that can be paid for or donated to makes it possible for browsers, apps and others to push for it in relation to your content.</p>
+
+<p>Rel-Payment is a link relation standardized in the "Web Linking" standard <a href="http://tools.ietf.org/html/rfc5988#page-14">RFC5988</a>. As a standard link relation you can use it anywhere – in HTML pages, HTTP headers, feeds and feed items etc.</p>
+
+<h2>Example</h2>
+
+<pre><code>&lt;link rel="payment" href="https://example.com/payment" type="text/html" title="Foo this through Example.com" /&gt;
+</code></pre>
+
+<h2>Recommended implementation</h2>
+
+<ul>
+<li>Always have the link reference a HTML-page in its <code>href</code>-attribute so that one can always fall back to looking it up with a simple browser. If you want to be able to use the payment link with your API then it's recommended that the API extracts the data it needs from the HTML-link rather than adding a link to an API-specific non-HTML resource.</li>
+<li>To signal that the link leads to a HTML-page, add the <code>type="text/html"</code> attribute to the link. </li>
+<li>It is recommended to add a <code>title</code> attribute describing the purpose or target of the link - especially so if there are multiple links available in the same document as the title can then be used by clients to distinguish the different payment links from each other.</li>
+<li>Parsers only supporting a single rel-payment link should pick the first suitable rel-payment link that they find in the document.</li>
+<li>Friendly note: Parsers should remember that the <code>rel</code> attribute is a space delimited list of many independent relations and that it is enough for one of them to be "payment" for the link to be considered a rel-payment link.</li>
+</ul><h2>Supporters</h2>
+
+<ul>
+<li>
+<a href="http://flattr.com">Flattr</a> – promotes including links to Flattr in HTML pages and feeds through eg. own WordPress plugin and uses that data in eg. their own browser extensions.</li>
+</ul><h2>Tools</h2>
+
+<ul>
+<li>
+<em>soon</em> - Rel-Payment Browser Extension for Chrome and Firefox</li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-33113167-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
