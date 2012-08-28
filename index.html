@@ -49,11 +49,13 @@
 <li>It is recommended to add a <code>title</code> attribute describing the purpose or target of the link - especially so if there are multiple links available in the same document as the title can then be used by clients to distinguish the different payment links from each other.</li>
 <li>Parsers only supporting a single rel-payment link should pick the first suitable rel-payment link that they find in the document.</li>
 <li>Friendly note: Parsers should remember that the <code>rel</code> attribute is a space delimited list of many independent relations and that it is enough for one of them to be "payment" for the link to be considered a rel-payment link.</li>
-</ul><h2>Supporters</h2>
+</ul><h2>Used by</h2>
 
 <ul>
 <li>
 <a href="http://flattr.com">Flattr</a> – are promoting the inclusion of rel-payment links in HTML pages and feeds as a way to indicate that one can "flattr" a site. They are actively supporting it through eg. their own WordPress plugin and uses that data in eg. their own browser extensions. They are also publishing rel-payment links on all flattrable content on their own website.</li>
+<li>
+<a href="http://embed.ly">Embedly</a> – parses and returns rel-payment data in their <a href="http://embed.ly/docs/endpoints/2/objectify">Objectify API</a> endpoint, making it easy for embedders to know if something can be donated/paid for.</li>
 </ul><h2>Tools</h2>
 
 <ul>
